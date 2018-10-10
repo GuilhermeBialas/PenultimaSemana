@@ -34,13 +34,11 @@ public class Principal {
             transaction = session.getTransaction();
             transaction.begin();
 
-            
             Sistema sistemaDoKleiton = new Sistema();
-            sistemaDoKleiton.setNome("Kreitom");
-            session.save(sistemaDoKleiton);
+            sistemaDoKleiton.setNome("Cleitom");
+            sistemaDoKleiton.setId(1);
+            session.update(sistemaDoKleiton);
 
-            
-            
             //INSERT NO HD
             transaction.commit();
         } catch (HibernateException e) {
