@@ -7,7 +7,7 @@ and open the template in the editor.
 
 <!--hibernate.cfg-->
 <hibernate-configurtion>
-     <section-factory>
+     <session-factory>
         <property name= "hibernate.dialect">
             org.hibernate.dialect.MySQLDialect
         </property>
@@ -17,11 +17,11 @@ and open the template in the editor.
         <property name = "hibernate.connection.url">
             jdbc:mysql://localhost/exemplo_hibernate_00
         </property>
-        <property name = "hibernate.connection.login">
+        <property name = "hibernate.connection.username">
             root
         </property>
         <property name = "hibernte.connection.password">
         </property>
 
-     </section-factory>
+     </session-factory>
 </hibernate-configuration>
