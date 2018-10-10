@@ -8,7 +8,7 @@ and open the template in the editor.
 
 <hibernate-mapping>
     <class name="bean.Sistema" table ="sistemas">
-        <id name="" type="int" column="id">
+        <id name="id" type="int" column="id">
           <genarator class="increment"/>
         </id>
        
