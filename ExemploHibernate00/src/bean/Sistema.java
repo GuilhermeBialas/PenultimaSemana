@@ -9,8 +9,9 @@ package bean;
  * @author Guilherme Bialas
  */
 public class Sistema {
-   private int id;
-   private String nome;
+
+    private int id;
+    private String nome;
 
     public int getId() {
         return id;

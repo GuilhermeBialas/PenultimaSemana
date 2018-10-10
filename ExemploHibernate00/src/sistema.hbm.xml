@@ -9,10 +9,10 @@ and open the template in the editor.
 <hibernate-mapping>
     <class name="bean.Sistema" table ="sistemas">
         <id name="id" type="int" column="id">
-          <genarator class="increment"/>
+            <genarator class="increment"/>
         </id>
        
-       <property name="nome" column="nome" type="string"/>
+        <property name="nome" column="nome" type="string"/>
 
 
     </class>

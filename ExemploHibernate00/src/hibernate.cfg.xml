@@ -7,7 +7,7 @@ and open the template in the editor.
 
 <!--hibernate.cfg-->
 <hibernate-configurtion>
-     <session-factory>
+    <session-factory>
         <property name= "hibernate.dialect">
             org.hibernate.dialect.MySQLDialect
         </property>
@@ -23,5 +23,7 @@ and open the template in the editor.
         <property name = "hibernte.connection.password">
         </property>
 
-     </session-factory>
+        <mapping resource="sistema.hbm.xml"/>
+        
+    </session-factory>
 </hibernate-configuration>
