@@ -20,8 +20,8 @@ import org.hibernate.cfg.Configuration;
 public class Conexao {
     private StandardServiceRegistry sr = null;
     private SessionFactory factory = null;
-    private Transaction transaction = null;
-    private Session session = null;
+    public Transaction transaction = null;
+    public Session session = null;
     
     public boolean conectar(){
         sr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();

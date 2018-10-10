@@ -6,6 +6,7 @@
 package dao;
 
 import bean.Aluno;
+import database.Conexao;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,14 @@ public class AlunoDAO {
     }
 
     public int inserir(Aluno aluno) {
+        Conexao conexao = new Conexao();
+        if (conexao.conectar()) {
+            conexao.session.save(aluno);
+            conexao.transaction.commit();
+            conexao.session.close();
+            return aluno.getId();
+
+        }
         return -1;
     }
 
@@ -37,4 +46,6 @@ public class AlunoDAO {
     public boolean excluir(int id) {
         return false;
     }
+    public 
+
 }
