@@ -27,28 +27,28 @@ public class Principal {
         StandardServiceRegistry sr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xnl").build();
 
         SessionFactory factory = new Configuration().buildSessionFactory(sr);
-        
+
         Transaction transaction = null;
         try {
             Session session = factory.openSession();
             transaction = session.getTransaction();
             transaction.begin();
-            
+
             
             Sistema sistemaDoKleiton = new Sistema();
             sistemaDoKleiton.setNome("Kreitom");
             session.save(sistemaDoKleiton);
+
             
             
             //INSERT NO HD
             transaction.commit();
         } catch (HibernateException e) {
-        e.printStackTrace();
+            e.printStackTrace();
             if (transaction.isActive()) {
                 transaction.rollback();
             }
-                
-            }finally{
+        } finally {
             factory.close();
         }
 
