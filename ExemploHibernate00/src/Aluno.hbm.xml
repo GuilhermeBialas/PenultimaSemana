@@ -20,5 +20,5 @@ and open the template in the editor.
         <property name="quantidadeFaltas" column="quantidadeFaltas" type="int"/>
         
         
-    </class>
+    </class>        
 </hibernate_mapping>
