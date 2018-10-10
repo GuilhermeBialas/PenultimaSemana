@@ -5,7 +5,7 @@
  */
 package bean;
 
-/**kk
+/**
  * @author Guilherme Bialas
  */
 public class Sistema {
