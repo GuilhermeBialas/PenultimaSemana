@@ -5,6 +5,9 @@
  */
 package view;
 
+import bean.Aluno;
+import dao.AlunoDAO;
+
 /**
  *
  * @author Alunos
@@ -57,6 +60,11 @@ public class AlunoCadastro extends javax.swing.JFrame {
         jLabel6.setText("Nota 4");
 
         jButton1.setText("Salvar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +133,18 @@ public class AlunoCadastro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Aluno aluno = new Aluno();
+        aluno.setNome(jTextFieldNome.getText());
+        aluno.setNota1(Double.parseDouble(jTextFieldNota1.getText()));
+        aluno.setNota2(Double.parseDouble(jTextFieldNota2.getText()));
+        aluno.setNota3(Double.parseDouble(jTextFieldNota3.getText()));
+        aluno.setNota4(Double.parseDouble(jTextFieldNota4.getText()));
+        aluno.setQuantidadeFaltas(Integer.parseInt(jTextFieldQuantidadeFaltas.getText()));
+        int id = new AlunoDAO().inserir(aluno);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
