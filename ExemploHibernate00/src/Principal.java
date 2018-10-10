@@ -35,7 +35,7 @@ public class Principal {
             transaction = session.getTransaction();
             transaction.begin();
 
-           /* Sistema sistemaDoKleiton = new Sistema();
+            /* Sistema sistemaDoKleiton = new Sistema();
             sistemaDoKleiton.setNome("Cleitom");
             sistemaDoKleiton.setId(1);
             session.update(sistemaDoKleiton);*/
@@ -47,6 +47,10 @@ public class Principal {
                
            }
             
+           
+            Sistema sistema = new Sistema();
+            sistema.setId(1);
+            session.remove(sistema);
             
             
             //INSERT NO HD
