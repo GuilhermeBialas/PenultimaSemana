@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--hibernate.cfg-->
+<hibernate-configurtion>
+     <section-factory>
+        <property name= "hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+        <property name = "hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+        <property name = "hibernate.connection.url">
+            jdbc:mysql://localhost/exemplo_hibernate_00
+        </property>
+        <property name = "hibernate.connection.login">
+            root
+        </property>
+        <property name = "hibernte.connection.password">
+        </property>
+
+     </section-factory>
+</hibernate-configuration>
