@@ -1,4 +1,5 @@
 
+import bean.Sistema;
 import javax.security.auth.login.AppConfigurationEntry;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -32,6 +33,12 @@ public class Principal {
             Session session = factory.openSession();
             transaction = session.getTransaction();
             transaction.begin();
+            
+            
+            Sistema sistemaDoKleiton = new Sistema();
+            sistemaDoKleiton.setNome("Kreitom");
+            session.save(sistemaDoKleiton);
+            
             
             //INSERT NO HD
             transaction.commit();
