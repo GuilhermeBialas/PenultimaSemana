@@ -1,5 +1,6 @@
 
 import bean.Sistema;
+import java.util.List;
 import javax.security.auth.login.AppConfigurationEntry;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -34,11 +35,20 @@ public class Principal {
             transaction = session.getTransaction();
             transaction.begin();
 
-            Sistema sistemaDoKleiton = new Sistema();
+           /* Sistema sistemaDoKleiton = new Sistema();
             sistemaDoKleiton.setNome("Cleitom");
             sistemaDoKleiton.setId(1);
-            session.update(sistemaDoKleiton);
+            session.update(sistemaDoKleiton);*/
 
+            
+            List resultados = session.createQuery("from sistema").list();
+           for(Sistema sistema :(List<Sistema>)resultados){
+               System.out.println(sistema.getNome());
+               
+           }
+            
+            
+            
             //INSERT NO HD
             transaction.commit();
         } catch (HibernateException e) {
