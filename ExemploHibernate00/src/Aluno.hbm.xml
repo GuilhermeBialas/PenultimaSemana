@@ -6,3 +6,19 @@ and open the template in the editor.
 -->
 
 
+<hibernate_mapping>
+    <class name="bean.Aluno" table="alunos">
+        <id name = "id" column="id" type="int">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="nome" column="nome" type="string"/>
+        <property name="nota1" column="nota1" type="double"/>
+        <property name="nota2" column="nota2" type="double"/>
+        <property name="nota3" column="nota3" type="double"/>
+        <property name="nota4" column="nota4" type="double"/>
+        <property name="quantidadeFaltas" column="quantidadeFaltas" type="int"/>
+        
+        
+    </class>
+</hibernate_mapping>
