@@ -45,7 +45,7 @@ public class AlunoCadastro extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastro Alunos");
+        setTitle("Cadastro");
 
         jLabel1.setText("Nome");
 
@@ -95,9 +95,9 @@ public class AlunoCadastro extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jLabel6))))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
