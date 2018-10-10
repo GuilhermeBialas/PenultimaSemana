@@ -24,6 +24,6 @@ and open the template in the editor.
         </property>
 
         <mapping resource="sistema.hbm.xml"/>
-        
+         <mapping resource="aluno.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
