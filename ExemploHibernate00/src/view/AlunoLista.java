@@ -49,11 +49,11 @@ public class AlunoLista extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Quantidade Faltas"
+                "Id", "Nome", "Quantidade Faltas"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -63,6 +63,11 @@ public class AlunoLista extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Apagar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Alterar");
 
@@ -100,12 +105,23 @@ public class AlunoLista extends javax.swing.JFrame {
         List<Aluno> alunos = new AlunoDAO().obterTodos();
         for(Aluno aluno : alunos){
             dtm.addRow(new Object[]{
+                aluno.getId(),
                aluno.getNome(),aluno.getQuantidadeFaltas()
             });
-            
         }
-        
     }//GEN-LAST:event_formWindowActivated
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        int linhaSelecionada = jTable1.getSelectedRow();
+       int id = Integer.parseInt(jTable1.getValueAt(linhaSelecionada, 0).toString());
+         boolean apagado = new AlunoDAO().excluir(id);
+                 if(apagado){
+                     DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+                     dtm.removeRow(linhaSelecionada);
+                 }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

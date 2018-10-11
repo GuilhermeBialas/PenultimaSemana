@@ -50,6 +50,18 @@ public class AlunoDAO {
     }
 
     public boolean excluir(int id) {
+        Conexao conexao = new Conexao();
+        if (conexao.conectar()) {
+            Aluno aluno = conexao.session.get(Aluno.class,id);
+            conexao.session.delete(aluno);
+            conexao.transaction.commit();
+            conexao.session.close();
+            return true;
+            
+        }
+        
+        
+        
         return false;
     }
 
