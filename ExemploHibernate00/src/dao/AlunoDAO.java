@@ -51,6 +51,13 @@ public class AlunoDAO {
     }
 
     public boolean alterar(Aluno aluno) {
+        Conexao conexao = new Conexao();
+        if (conexao.conectar()) {
+            conexao.session.update(aluno);
+            conexao.transaction.commit();
+            conexao.session.close();
+            return true;
+        }
         return false;
     }
 
