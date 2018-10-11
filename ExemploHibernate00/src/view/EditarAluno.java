@@ -10,19 +10,27 @@ import java.awt.GraphicsConfiguration;
 
 /**
  *
- * @author Alunos
+ * @author Guilherme Henrique Bialas
  */
 public class EditarAluno extends javax.swing.JFrame {
-private Aluno aluno;
+
+    private Aluno aluno;
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
+        jTextFieldId.setText(String.valueOf(aluno.getId()));
+        jTextFieldNome.setText(aluno.getNome());
+        jTextFieldNota1.setText(String.valueOf(aluno.getNota1()));
+        jTextFieldNota2.setText(String.valueOf(aluno.getNota2()));
+        jTextFieldNota3.setText(String.valueOf(aluno.getNota3()));
+        jTextFieldNota4.setText(String.valueOf(aluno.getNota4()));
+        jTextFieldQuantidadefaltas.setText(String.valueOf(aluno.getQuantidadeFaltas()));
     }
-
 
     public EditarAluno(GraphicsConfiguration gc) {
         super(gc);
     }
+
     /**
      * Creates new form EditarAluno
      */
@@ -154,7 +162,7 @@ private Aluno aluno;
     }//GEN-LAST:event_jTextFieldQuantidadefaltasActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

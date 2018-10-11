@@ -109,6 +109,7 @@ public class AlunoLista extends javax.swing.JFrame {
         DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
         List<Aluno> alunos = new AlunoDAO().obterTodos();
         for(Aluno aluno : alunos){
+            dtm.setRowCount(0);
             dtm.addRow(new Object[]{
                 aluno.getId(),
                aluno.getNome(),aluno.getQuantidadeFaltas()
