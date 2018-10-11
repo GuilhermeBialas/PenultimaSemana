@@ -16,8 +16,14 @@ import java.util.List;
  */
 public class AlunoDAO {
 
+    private Object session;
+
     public List<Aluno> obterTodos() {
         List<Aluno> alunos = new ArrayList<>();
+        Conexao conexao = new Conexao();
+        if (conexao.conectar()) {
+            alunos = conexao.session.createQuery("from Aluno").list();
+        }
         return alunos;
     }
 
@@ -46,6 +52,5 @@ public class AlunoDAO {
     public boolean excluir(int id) {
         return false;
     }
-     
 
 }
