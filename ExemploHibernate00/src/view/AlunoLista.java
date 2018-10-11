@@ -70,6 +70,11 @@ public class AlunoLista extends javax.swing.JFrame {
         });
 
         jButton2.setText("Alterar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,6 +127,17 @@ public class AlunoLista extends javax.swing.JFrame {
                  }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       int linhaSelecionada = jTable1.getSelectedRow();
+             int id = Integer.parseInt(jTable1.getValueAt(linhaSelecionada, 0).toString());
+             Aluno aluno = new AlunoDAO().obterPeloId(id);
+             EditarAluno editar = new EditarAluno();
+             editar.setAluno(aluno);
+             editar.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

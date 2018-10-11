@@ -28,8 +28,14 @@ public class AlunoDAO {
     }
 
     public Aluno obterPeloId(int id) {
-
         Aluno aluno = null;
+        Conexao conexao = new Conexao();
+        if (conexao.conectar()) {
+            aluno = conexao.session.get(Aluno.class, id);
+            conexao.transaction.commit();
+            conexao.session.close();
+
+        }
         return aluno;
     }
 
@@ -40,7 +46,6 @@ public class AlunoDAO {
             conexao.transaction.commit();
             conexao.session.close();
             return aluno.getId();
-
         }
         return -1;
     }
@@ -52,17 +57,12 @@ public class AlunoDAO {
     public boolean excluir(int id) {
         Conexao conexao = new Conexao();
         if (conexao.conectar()) {
-            Aluno aluno = conexao.session.get(Aluno.class,id);
+            Aluno aluno = conexao.session.get(Aluno.class, id);
             conexao.session.delete(aluno);
             conexao.transaction.commit();
             conexao.session.close();
             return true;
-            
         }
-        
-        
-        
         return false;
     }
-
 }
